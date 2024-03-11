@@ -1,25 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Mole from './Mole.js'
+import Molehill from './Molehill.js'
+import BothComponents from './BothComponents.js';
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Mole Container</h2>
+      <Mole />
+      <Molehill />
+      <BothComponents />
     </div>
-  );
+  )
 }
 
 export default App;
