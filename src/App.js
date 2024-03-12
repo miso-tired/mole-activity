@@ -1,18 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-import Mole from './Mole.js'
-import Molehill from './Molehill.js'
-import BothComponents from './BothComponents.js';
+import MoleContainer from './MoleContainer';
+import { useState } from 'react'
 
-function App(props) {
+function App() {
+  let [score, setScore] = useState(0)
+  
+  const createMoleHill = () => {
+    let hills = []
+    for(let i = 0; i < 9; i++) {
+      hills.push(<MoleContainer key={i} setScore={setScore} score={score} />)
+    }
+    return (
+      <div>
+        { hills }
+      </div>
+    )
+  }
+  
   return (
-    <div>
-      <h2>Mole Container</h2>
-      <Mole />
-      <Molehill />
-      <BothComponents />
+    <div className="App">
+      <h1>React-A-Mole!</h1>
+      {score}
+      {createMoleHill()}
     </div>
-  )
+  );
 }
 
-export default App;
+
+export default App
